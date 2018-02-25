@@ -1,0 +1,105 @@
+
+<ul class="nav row">
+    <li [class.activeTab] = "isAllVisible" (click)="sortByTruck('all')" class="col-2">ALL</li>
+    <li class="col-2" [class.activeTab] = "isActive && isVanVisible" (click)="sortByTruck('van')"><img src="../assets/icons/van.svg" alt="van icon"></li>
+    <li class="col-2" [class.activeTab] = "isActive && isBoxVisible" (click)="sortByTruck('box')"><img src="../assets/icons/box-van.svg" alt="box van icon"></li>
+    <li class="col-2" [class.activeTab] = "isActive && isRigidVisible" (click)="sortByTruck('rigid')"><img src="../assets/icons/rigid-truck.svg" alt="rigid trailer icon"></li>
+    <li class="col-2" [class.activeTab] = "isActive && isSemiVisible" (click)="sortByTruck('semi')"><img src="../assets/icons/rigid-truck.svg" alt="semi trailer icon"></li>
+    <li class="col-2" [class.activeTab] = "isActive && isFullVisible" (click)="sortByTruck('full')"><img src="../assets/icons/full-trailer.svg" alt="full trailer icon"></li>
+  </ul>
+
+<ul class="row vehicles-list">
+
+  <li *ngIf="arrFullTrailer[0]['drivers'] && isFullVisible" id="full_trailer" class="col-lg-4">
+    <div class="vehicles-card">
+
+      <span class="vehicle-icon">
+        <img src="../assets/icons/full-trailer.svg" alt="Icon Full Trailer">
+      </span>
+      <h3>{{ arrFullTrailer[0]['drivers'].length }} Drivers</h3>
+
+      <ul>
+        <li *ngFor="let driver of arrFullTrailer[0]['drivers']">
+          <span class="driver-name">{{driver.name}}</span>
+          <span class="driver-email">{{driver.email}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+
+  <li *ngIf="arrSemiTrailer[0]['drivers'] && isSemiVisible" id="semi_trailer" class="col-lg-4">
+    <div class="vehicles-card">
+
+      <span class="vehicle-icon">
+        <img src="../assets/icons/rigid-truck.svg" alt="Icon Semi Trailer">
+      </span>
+      <h3>{{ arrSemiTrailer[0]['drivers'].length }} Drivers</h3>
+
+      <ul>
+        <li *ngFor="let driverSemiTrailer of arrSemiTrailer[0]['drivers']">
+          <span class="driver-name">{{driverSemiTrailer.name}}</span>
+          <span class="driver-email">{{driverSemiTrailer.email}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+
+  <li *ngIf="arrRigidTruck[0]['drivers'] && isRigidVisible" id="rigid_truck" class="col-lg-4">
+    <div class="vehicles-card">
+
+      <span class="vehicle-icon">
+        <img src="../assets/icons/rigid-truck.svg" alt="Icon Rigid Truck">
+      </span>
+      <h3>{{ arrRigidTruck[0]['drivers'].length }} Drivers</h3>
+
+      <ul>
+
+        <li *ngFor="let rigidDriver of arrRigidTruck[0]['drivers']">
+          <span class="driver-name">{{rigidDriver.name}}</span>
+          <span class="driver-email">{{rigidDriver.email}}</span>
+        </li>
+
+      </ul>
+
+    </div>
+  </li>
+
+  <li *ngIf="arrBoxVan[0]['drivers'] && isBoxVisible" id="box_van" class="col-lg-4">
+    <div class="vehicles-card">
+
+      <span class="vehicle-icon">
+        <img src="../assets/icons/box-van.svg" alt="Icon Box Van">
+      </span>
+      <h3>{{ arrBoxVan[0]['drivers'].length }} Drivers</h3>
+
+      <ul>
+        <li *ngFor="let boxVanDriver of arrBoxVan[0]['drivers']">
+          <span class="driver-name">{{boxVanDriver.name}}</span>
+          <span class="driver-email">{{boxVanDriver.email}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+
+  <li *ngIf="arrVan[0]['drivers'] && isVanVisible" id="van" class="col-lg-4">
+    <div class="vehicles-card">
+
+      <span class="vehicle-icon">
+        <img src="../assets/icons/van.svg" alt="Icon Van">
+      </span>
+      <h3>{{ arrVan[0]['drivers'].length }} Drivers</h3>
+
+      <ul>
+        <li *ngFor="let vanDriver of arrVan[0]['drivers']">
+          <span class="driver-name">{{vanDriver.name}}</span>
+          <span class="driver-email">{{vanDriver.email}}</span>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+
+</ul>

@@ -1,0 +1,48 @@
+<div *ngIf="driver" class="row wrapper-driver-card">
+  <div class="col-md-5 driver-card">
+    <div class="row">
+
+      <div class="col-3">Name:</div>
+      <div class="col-9">{{driver.name}}</div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-3">Email:</div>
+      <div class="col-9">{{driver.email}}</div>
+    
+    </div>
+
+    <div class="row">
+        <span class="col-3 fleet">Fleet:</span>
+        <span class="col-9 fleet-totals">{{sumOfAllTrucks}}</span>
+    </div>
+
+    <div class="row driver-details-fleet">
+      
+      <ul class="col-lg-12">
+        <li class="row fleet-vehicle">
+          <img class="col-6" src="../assets/icons/full-trailer.svg" alt="full trailer icon">
+          <span class="col-6">Full-trailer: {{totalFullTrailer}}</span>
+        </li>
+        <li class="row fleet-vehicle">
+          <img class="col-6" src="../assets/icons/rigid-truck.svg" alt="semi trailer icon">
+          <span class="col-6">Semi-trailer: {{totalSemiTrailer}}</span>
+        </li>
+        <li class="row fleet-vehicle">
+          <img class="col-6" src="../assets/icons/rigid-truck.svg" alt="rigid truck icon">
+          <span class="col-6">Rigid-truck: {{totalRigid}}</span>
+        </li>
+        <li class="row fleet-vehicle">
+          <img class="col-6" src="../assets/icons/box-van.svg" alt="box van icon">
+          <span class="col-6">Box-van: {{totalBoxVan}}</span>
+        </li>
+        <li class="row fleet-vehicle">
+          <img class="col-6" src="../assets/icons/van.svg" alt="van icon ">
+          <span class="col-6">Van: {{totalVan}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

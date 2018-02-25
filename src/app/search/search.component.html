@@ -1,0 +1,30 @@
+<div class="row wrapper-search">
+
+  <div class="col-lg-4">
+    
+    <h1>Vehicles</h1>
+    
+    <!-- search-box  input-group input-group-md-->
+    <div class="search-box">
+      <div class="input-field col s12">
+        
+        <!--  autocomplete-->
+        <input id="country" [(ngModel)]="query" (keyup)="filter()" class="form-control" type="text"/>
+        <label for="country">Search...</label>
+        <button (click)="onSelect(query)" class="search-btn" type="button"><fa name="search"></fa></button>
+      </div>
+      
+    </div>
+
+    <div class="suggestions" *ngIf="filteredList.length > 0">
+        <ul *ngFor="let item of filteredList" class="autocomplete-content dropdown-content">
+            <li>
+                <a (click)="select(item); onSelect(item)">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+
+  </div>
+
+</div>
+<app-driver-details [driver]="selectedDriver"></app-driver-details>
